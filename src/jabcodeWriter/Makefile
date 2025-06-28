@@ -1,6 +1,6 @@
 PREFIX 	=
 CC 	= $(PREFIX)gcc
-CFLAGS	 = -O2 -std=c11
+CFLAGS	 = -O2 -std=c11 -no-pie
 
 TARGET = bin/jabcodeWriter
 
