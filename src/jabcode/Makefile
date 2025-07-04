@@ -5,6 +5,7 @@ RANLIB	= $(PREFIX)ranlib
 CFLAGS	= -O2 -std=c11
 
 TARGET = build/libjabcode.a
+TARGET_JS = build/libjabcode.js
 
 OBJECTS := $(patsubst %.c,%.o,$(wildcard *.c))
 
@@ -16,4 +17,4 @@ $(OBJECTS): %.o: %.c
 	$(CC) -c -I. -I./include $(CFLAGS) $< -o $@
 
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f $(TARGET) $(TARGET_JS) $(OBJECTS)
