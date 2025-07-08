@@ -7,11 +7,6 @@
 #define MAX_CHARS 500
 
 EMSCRIPTEN_KEEPALIVE
-int get_default_symbol_number() {
-  return DEFAULT_SYMBOL_NUMBER;
-}
-
-EMSCRIPTEN_KEEPALIVE
 char *read_image(char *image_file_name)
 {
 
@@ -49,3 +44,5 @@ char *read_image(char *image_file_name)
 	free(decoded_data);
     return 0;
 }
+
+
