@@ -23,7 +23,7 @@ $(OBJECTS): %.o: %.c
 
 $(TARGET_JS): $(TARGET) $(JS_BINDS).o
 	@echo 'building target_js'
-	$(CC) $(JS_BINDS).o -Lbuild -ljabcode -o $(TARGET_JS) -s USE_LIBPNG=1 -s SINGLE_FILE
+	$(CC) $(JS_BINDS).o -Lbuild -ljabcode -o $(TARGET_JS) -s USE_LIBPNG=1 -s SINGLE_FILE -s EXPORTED_RUNTIME_METHODS='["FS"]'
 	echo "export default Module;" >> $(TARGET_JS)
 
 force_js:
