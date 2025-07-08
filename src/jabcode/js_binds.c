@@ -42,6 +42,7 @@ char *read_image(char *image_file_name)
 
   char *result_str = (char*) malloc(sizeof(char) * MAX_CHARS);
   strcpy(result_str, decoded_data->data);
+  result_str[decoded_data->length * sizeof(char)] = '\0';
   return result_str;
 
 	free(bitmap);
