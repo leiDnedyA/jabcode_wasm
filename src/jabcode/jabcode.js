@@ -56,6 +56,18 @@ const jabcode = {
       wasmBindings._free(resultPtr);
     }
     return resultString;
+  },
+  createEncoding: async (dataString) => {
+    let data = null;
+    const dataPtr = wasmBindings.stringToNewUTF8(dataString);
+    try {
+      wasmBindings._encode_image(dataPtr);
+      data = FS.readFile('/out.png');
+    } finally {
+      wasmBindings._free(dataPtr);
+    }
+    const blob = new Blob([data.buffer], { type: 'image/png' });
+    return blob;
   }
 };
 
