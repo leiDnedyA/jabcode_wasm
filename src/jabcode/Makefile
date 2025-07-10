@@ -3,7 +3,7 @@ CC 	= $(PREFIX)emcc
 AR 	= $(PREFIX)emar
 RANLIB	= $(PREFIX)emranlib
 CFLAGS	= -O2 -std=c11
-EMCCFLAGS = -s USE_LIBPNG=1 -s SINGLE_FILE -s FORCE_FILESYSTEM=1 -s EXPORTED_RUNTIME_METHODS='["FS","stringToNewUTF8","UTF8ToString"]' -s EXPORTED_FUNCTIONS='["_free","_malloc"]'
+EMCCFLAGS = -s USE_LIBPNG=1 -s SINGLE_FILE -s FORCE_FILESYSTEM=1 -s MAXIMUM_MEMORY=256MB -s EXPORTED_RUNTIME_METHODS='["FS","stringToNewUTF8","UTF8ToString"]' -s EXPORTED_FUNCTIONS='["_free","_malloc"]'
 
 TARGET = build/libjabcode.a
 TARGET_JS = build/libjabcode.js

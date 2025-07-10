@@ -2320,5 +2320,5 @@ jab_int32 generateJABCode(jab_encode* enc, jab_data* data)
 */
 void reportError(jab_char* message)
 {
-    printf("JABCode Error: %s\n", message);
+    // printf("JABCode Error: %s\n", message);
 }
