@@ -21,17 +21,13 @@ char *read_image(char *image_file_name)
 	jab_data* decoded_data = decodeJABCodeEx(bitmap, NORMAL_DECODE, &decode_status, symbols, MAX_SYMBOL_NUMBER);
 	if(decoded_data == NULL) {
 		free(bitmap);
-	  free(decoded_data);
 		reportError("Decoding JABCode failed");
-		if(decode_status > 0)
-			return NULL;
-		else
-			return NULL;
+    return NULL;
 	}
 
   char *result_str = (char*) malloc(sizeof(char) * (decoded_data->length + 1));
   strcpy(result_str, decoded_data->data);
-  result_str[decoded_data->length * sizeof(char)] = '\0';
+  result_str[decoded_data->length] = '\0';
 
 	free(bitmap);
 	free(decoded_data);

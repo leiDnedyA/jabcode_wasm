@@ -51,9 +51,9 @@ const jabcode = {
     try {
       resultPtr = wasmBindings._read_image(pathPtr);
       resultString = wasmBindings.UTF8ToString(resultPtr);
+      wasmBindings._free(resultPtr);
     } finally {
       wasmBindings._free(pathPtr);
-      wasmBindings._free(resultPtr);
       FS.unlink(filepath);
     }
     return resultString;
